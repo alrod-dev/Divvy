@@ -1,0 +1,36 @@
+{
+  "name": "divvy-carapp",
+  "version": "1.0.0",
+  "description": "Divvy is a car pool sharing app that allows users to share rides with each other to work, events, parties, etc.",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.6",
+    "mongoose": "^4.13.5",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.12.1",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
+    "react-materialize": "^1.1.0",
+    "start": "^5.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alrod909/Divvy-Mongoose.git"
+  },
+  "author": "Alfredo Rodriguez & Louie Lohebec",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alrod909/Divvy-Mongoose/issues"
+  },
+  "homepage": "https://github.com/alrod909/Divvy-Mongoose#readme"
+}
