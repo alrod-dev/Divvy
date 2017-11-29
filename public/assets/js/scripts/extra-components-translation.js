@@ -12,8 +12,8 @@ $(function() {
     if (userLang == 'es') language = 'es';
 
     /* If user has selected a language, we apply it */
-    if ($.cookie('app-language')) {
-      var language = $.cookie('app-language');
+    if ($.cookie('router-language')) {
+      var language = $.cookie('router-language');
     }
     /* We get current language on page load */
     $("[data-translate]").jqTranslate('../../vendors/translator/translate', {
@@ -29,8 +29,8 @@ $(function() {
       });
 
       /* We save language inside a cookie */
-      $.cookie('app-language', language);
-      $.cookie('app-language', language, {
+      $.cookie('router-language', language);
+      $.cookie('router-language', language, {
         path: '/'
       });
     });

@@ -3,12 +3,14 @@
 // Date: 12/2/2017
 
 
-module.exports = function getSites(app) {
+let express = require("express");
+let router = express.Router();
+
 
     // Basic route that sends the user first to the AJAX Page
 
     //Index Page
-    app.get('/', function (req, res) {
+    router.get('/', function (req, res) {
         res.render('index', {
             title: 'Index | Divvy',
             css: ['https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css',
@@ -21,7 +23,7 @@ module.exports = function getSites(app) {
     });
 
     //Login Page
-    app.get('/login-page', function (req, res) {
+    router.get('/login-page', function (req, res) {
 
         res.render('loginPage', {
             title: 'Login Page | Divvy',
@@ -34,7 +36,7 @@ module.exports = function getSites(app) {
     });
 
     //User Registration Page
-    app.get('/user-register', function (req, res) {
+    router.get('/user-register', function (req, res) {
 
         res.render('registerUser', {
             title: 'Register User | Divvy',
@@ -47,7 +49,7 @@ module.exports = function getSites(app) {
     });
 
     //Locked User Page
-    app.get('/users-lock', function (req, res) {
+    router.get('/users-lock', function (req, res) {
 
         res.render('userLock', {
             title: 'User Lock | Divvy',
@@ -60,7 +62,7 @@ module.exports = function getSites(app) {
     });
 
     //Main User Page
-    app.get('/users-page', function (req, res) {
+    router.get('/users-page', function (req, res) {
         res.render('userPage', {
             title: 'User Page | Divvy',
             css: ['/assets/css/themes/fixed-menu/materialize.css',
@@ -73,7 +75,7 @@ module.exports = function getSites(app) {
     });
 
     //User Profile Page
-    app.get('/users-profile', function (req, res) {
+    router.get('/users-profile', function (req, res) {
         res.render('profile', {
             title: 'User Profile | Divvy',
             css: ['/assets/css/themes/fixed-menu/materialize.css',
@@ -85,5 +87,5 @@ module.exports = function getSites(app) {
         });
     });
 
-};
+module.exports = router;
 

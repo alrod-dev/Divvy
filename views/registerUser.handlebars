@@ -1,9 +1,4 @@
-<!-- Start Page Loading -->
-<div id="loader-wrapper">
-    <div id="loader"></div>
-    <div class="loader-section section-left"></div>
-    <div class="loader-section section-right"></div>
-</div>
+
 
 
 <!-- Modal Structure -->
@@ -26,10 +21,38 @@
     </div>
 </div>
 
+{{#if errors}}
+
+    {{#each errors}}
+
+        <div id="card-alert" class="card gradient-45deg-red-pink">
+            <div class="card-content white-text">
+                <p>
+                    <i class="material-icons">error</i>{{msg}}</p>
+            </div>
+            <button type="button" class="close white-text" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+        </div>
+
+    {{/each}}
+
+    {{else}}
+
+    <!-- Start Page Loading -->
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+
+{{/if}}
+
+
 <!-- End Page Loading -->
 <div id="login-page" class="row register-page">
-    <div class="col m12 z-depth-4 card-panel" >
-        <form class="login-form register-form">
+    <div class="col m12 z-depth-4 card-panel">
+        <form class="login-form register-form" method="post" action="/users/register">
             <div class="row">
                 <div class="input-field col s12 center">
                     <h4>Register</h4>
@@ -39,60 +62,60 @@
             <div class="row margin">
 
                 <div class="row">
-                    <div class="input-field col s6">
+                    <div class="input-field col s6 form-group">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="name" type="text" class="validate form-control">
+                        <input id="name" type="text" name= "name" class="validate form-control">
                         <label for="name">Name</label>
                     </div>
 
-                    <div class="input-field col s6">
+                    <div class="input-field col s6 form-group">
                         <i class="material-icons prefix">settings_phone</i>
-                        <input id="phone" type="text" class="validate form-control">
+                        <input id="phone" type="text" name= "phone" class="validate form-control">
                         <label for="phone">Phone</label>
                     </div>
 
                 </div>
 
                 <div class="row">
-                    <div class="input-field col s12">
+                    <div class="input-field col s12 form-group">
                         <i class="material-icons prefix">email</i>
-                        <input id="email" type="email" class="validate form-control">
+                        <input id="email" type="email" name= "email" class="validate form-control">
                         <label for="email">Email</label>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="input-field col s6">
+                    <div class="input-field col s6 form-group">
                         <i class="material-icons prefix">directions_car</i>
-                        <input id="vehicle" type="text" class="validate form-control">
+                        <input id="vehicle" type="text" name= "vehicle" class="validate form-control">
                         <label for="vehicle">Car</label>
                     </div>
 
-                    <div class="input-field col s6">
+                    <div class="input-field col s6 form-group">
                         <i class="material-icons prefix">event_seat</i>
-                        <input id="seats" type="number" class="validate form-control">
+                        <input id="seats" type="number" name= "seats" class="validate form-control">
                         <label for="seats"># of Seats</label>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="input-field col s12">
+                    <div class="input-field col s12 form-group">
                         <i class="material-icons prefix">location_on</i>
-                        <input id="address" type="text" class="validate form-control">
+                        <input id="address" type="text" name= "address" class="validate form-control">
                         <label for="address">Address</label>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="input-field col s6">
+                    <div class="input-field col s6 form-group">
                         <i class="material-icons prefix">assignment_ind</i>
-                        <input id="username" type="text" class="validate form-control">
+                        <input id="username" type="text" name= "username" class="validate form-control">
                         <label for="username">Username</label>
                     </div>
 
-                    <div class="input-field col s6">
+                    <div class="input-field col s6 form-group">
                         <i class="material-icons prefix">lock</i>
-                        <input id="password" type="password" class="validate form-control">
+                        <input id="password" type="password" name= "password" class="validate form-control">
                         <label for="password">Password</label>
                     </div>
 
@@ -101,10 +124,14 @@
             </div>
             <div class="row">
                 <div class="input-field col s8">
-                    <button type="submit" class="btn waves-effect waves-light modal-trigger col s12" id="registerBtn">Register Now</button>
+                    <button type="submit" class="btn waves-effect waves-light modal-trigger col s12" id="registerBtn">
+                        Register Now
+                    </button>
                 </div>
                 <div class="input-field col s12">
-                    <p class="margin center medium-small sign-up">Already have an account? <a href="/login-page" id="register">Login</a></p>
+                    <p class="margin center medium-small sign-up">Already have an account? <a href="/login-page"
+                                                                                              id="register">Login</a>
+                    </p>
                 </div>
             </div>
         </form>

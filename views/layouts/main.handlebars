@@ -20,6 +20,48 @@
 <body cz-shortcut-listen="true" class="{{bodyName}}">
 
 
+{{#if success_msg}}
+
+    <div id="card-alert" class="card gradient-45deg-green-teal">
+        <div class="card-content white-text">
+            <p>
+                <i class="material-icons">check</i>{{success_msg}}</p>
+        </div>
+        <button type="button" class="close white-text" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+
+{{/if}}
+
+{{#if error_msg}}
+
+    <div id="card-alert" class="card gradient-45deg-red-pink">
+        <div class="card-content white-text">
+            <p>
+                <i class="material-icons">error</i>{{error_msg}}</p>
+        </div>
+        <button type="button" class="close white-text" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+
+{{/if}}
+
+{{#if error}}
+
+    <div id="card-alert" class="card gradient-45deg-red-pink">
+        <div class="card-content white-text">
+            <p>
+                <i class="material-icons">error</i>{{error}}</p>
+        </div>
+        <button type="button" class="close white-text" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+
+{{/if}}
+
 <!--Renders body of Index or Articles Saved-->
 {{{ body }}}
 

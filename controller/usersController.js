@@ -1,44 +1,28 @@
 
+let Users = require("../models/Users");
 
-// require packages needed for scraping data
-let cheerio = require('cheerio');
+module.exports.createUser = function (newUser, callback) {
 
-module.exports = function(request)  {
-    // Make a request for the news section of mlb.com
-    request("https://www.nytimes.com/section/sports", function (error, response, html) {
-        let genre = 'business';
-        // Load the html body from request into cheerio
-        let $ = cheerio.load(html);
-
-        // initiate an empty entry object
-        let data = [];
-        // For each article element with a "buckets-bottom" class
-        $("div.stream article").each(function (i, element) {
-
-
-
-            // add the title , url, content and image to the object
-            let headline = $(element).children('div.story-body').children('a').children('div.story-meta').children('h2').text().trim();
-            let content = $(element).children('div.story-body').children('a').children('div.story-meta').children('p').text().trim();
-            let link =  $(element).children('div.story-body').children('a').attr("href");
-            let image = $(element).children('div.story-body').children('a').children('div.wide-thumb').children('img').attr('src');
-
-            data.push({
-
-                title: headline,
-                text: content,
-                link: link,
-                img: image
-
-            });
-
-
-
+    bcrypt.genSalt(10, function(err, salt) {
+        bcrypt.hash(newUser.password, salt, function(err, hash) {
+            // Store hash in your password DB.
+            newUser.password = hash;
+            newUser.save(callback);
         });
-
-        console.log(data)
-
     });
 
+};
+
+module.exports.getUserByUsername = function (username, callback) {
+
+    let query = {username: username};
+    Users.findOne(query, callback);
+
+};
+
+module.exports.comparePassword = function (username, callback) {
+
+    let query = {username: username};
+    Users.findOne(query, callback);
 
 };

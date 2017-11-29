@@ -11,31 +11,51 @@ let cookieParser = require("cookie-parser");
 
 //Authentication Package
 let session = require("express-session");
+let expressValidator = require("express-validator");
 let passport = require("passport");
-
-let PORT = 6969;
-
-// Initialize Express
-let app = express();
-
-// Configure app with morgan and body parser
-app.use(logger("dev"));
-app.use(bodyParser.urlencoded({
-    extended: false
-}));
+let LocalStrategy = require("passport-local").Strategy;
+let flash = require("connect-flash");
 
 // Set Handlebars.
 let exphbs = require("express-handlebars");
 
+// Initialize Express
+let app = express();
+
+//Routing initiated
+let routes = require("./routes/html-routing");
+let users = require("./routes/api-routing");
+
+//Mongoose Connection
+require("./config/connection");
+
+// requiring the news and notes models
+require('./models/Users');
+
+let PORT = 6969;
+
+
+
+//View Engine
+app.set('views', path.join(__dirname, 'views'));
+app.engine("handlebars", exphbs({defaultLayout: "main"}));
+app.set("view engine", "handlebars");
+
+// BodyParser Middleware
+app.use(logger("dev"));
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
 app.use(cookieParser());
 
 // Static file support with public folder
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 app.use(session({
     secret: 'honey boo boo',
-    resave: false,
-    saveUninitialized: false
+    resave: true,
+    saveUninitialized: true
     // cookie: { secure: true }
 }));
 
@@ -43,17 +63,46 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.engine("handlebars", exphbs({defaultLayout: "main"}));
-app.set("view engine", "handlebars");
 
-//Routing initiated
-require("./routes/html-routing")(app);
-require("./routes/api-routing")(app);
+app.use(expressValidator({
+    errorFormatter: function (param, msg, value) {
 
-require("./config/connection");
+        let namespace = param.split('.'),
 
-// requiring the news and notes models
-require('./models/Users');
+            root = namespace.shift(),
+
+            formParam = root;
+
+        while (namespace.length)
+        {
+            formParam += '[' + namespace.shift() + ']';
+        }
+        return {
+            param: formParam,
+            msg : msg,
+            value: value
+        };
+
+    }
+}));
+
+//Flash text
+app.use(flash());
+
+app.use(function (req, res, next) {
+    res.locals.success_msg = req.flash('success_msg');
+    res.locals.error_msg = req.flash('error_msg');
+    res.locals.error = req.flash('error');
+    res.locals.user = req.user || null;
+    next();
+});
+
+//Set routes
+app.use('/', routes);
+app.use('/users', users);
+
+//Set the port
+app.set('port', (process.env.PORT || PORT));
 
 
 // Starts the server to begin listening

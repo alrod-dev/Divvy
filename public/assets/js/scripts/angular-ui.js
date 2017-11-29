@@ -2,7 +2,7 @@
  * AngularUI - Angular JS
  */
  
-var app = angular.module('materializeApp', ['ui.materialize'])
+var router = angular.module('materializeApp', ['ui.materialize'])
    .controller('BodyController', ["$scope", function($scope) {
      $scope.select = {
        value1: "Option1",
