@@ -1,0 +1,370 @@
+<!-- Start Page Loading -->
+<div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+</div>
+<!-- End Page Loading -->
+
+<!-- START HEADER -->
+<header id="header" class="page-topbar">
+    <!-- start header nav-->
+    <div class="navbar-fixed">
+
+        <!--Color of Nav Bar-->
+        <nav class="deep-purple darken-4">
+            <div class="nav-wrapper">
+                <ul class="left">
+                    <li>
+                        <h1 class="logo-wrapper">
+                            <a href="/users-page" class="brand-logo darken-1">
+                                <img src="/assets/images/logo/divvyLogo.png">
+                                <span class="logo-text hide-on-med-and-down">DIVVY</span>
+                            </a>
+                        </h1>
+                    </li>
+                </ul>
+
+                <!--Right Top Nav Bar-->
+                <ul class="right hide-on-med-and-down">
+
+
+                    <!--Fullscreen Button-->
+                    <li>
+                        <a href="javascript:void(0);" class="waves-effect waves-block waves-light toggle-fullscreen">
+                            <i class="material-icons">settings_overscan</i>
+                        </a>
+                    </li>
+
+
+                    <!--Profile Dropdown Button-->
+                    <li>
+                        <a href="javascript:void(0);" class="waves-effect waves-block waves-light profile-button"
+                           data-activates="profile-dropdown">
+                  <span class="avatar-status avatar-online">
+                    <img src="/assets/images/avatar/avatar-7.png" alt="avatar">
+                    <i></i>
+                  </span>
+                        </a>
+                    </li>
+
+
+                </ul>
+
+
+                <!-- profile-dropdown -->
+                <ul id="profile-dropdown" class="dropdown-content">
+
+                    <li>
+                        <a href="/users-profile" class="grey-text text-darken-1">
+                            <i class="material-icons">face</i> Profile</a>
+                    </li>
+
+
+                    <li class="divider"></li>
+
+                    <li>
+                        <a href="/users-lock" class="grey-text text-darken-1">
+                            <i class="material-icons">lock_outline</i> Lock</a>
+                    </li>
+
+                    <li>
+                        <a href="/login-page" class="grey-text text-darken-1">
+                            <i class="material-icons">keyboard_tab</i> Logout</a>
+                    </li>
+
+                </ul>
+
+
+            </div>
+        </nav>
+    </div>
+    <!-- end header nav-->
+</header>
+<!-- END HEADER -->
+
+
+<!-- START MAIN -->
+<div id="main">
+    <!-- START WRAPPER -->
+    <div class="wrapper">
+        <!-- START LEFT SIDEBAR NAV-->
+        <aside id="left-sidebar-nav">
+
+            <!--Left Side Nav-->
+            <ul id="slide-out" class="side-nav fixed leftside-navigation">
+
+                <!--User Icon and Info-->
+                <li class="user-details">
+                    <div class="row">
+
+                        <!--Profile Image-->
+                        <div class="col col s4 m4 l4">
+                            <img src="/assets/images/avatar/avatar-7.png" alt=""
+                                 class="circle responsive-img valign profile-image gradient-45deg-purple-pink">
+                        </div>
+
+                        <!--Profile Info-->
+                        <div class="col col s8 m8 l8">
+                            <a class="white-text profile-btn">John Doe</a>
+                            <p class="user-roal">Phone : 801-492-3421</p>
+                            <p class="user-roal">Car : Subaru Impreza</p>
+                            <p class="user-roal"># of Seats : 4</p>
+                        </div>
+
+                    </div>
+                </li>
+
+                <!--Links and Items in left side nav-->
+                <li class="no-padding">
+                    <ul class="collapsible" data-collapsible="accordion">
+
+                        <!--Users Item-->
+                        <li class="bold">
+                            <a class="collapsible-header  waves-effect waves-cyan active">
+                                <i class="material-icons">account_circle</i>
+                                <span class="nav-text">Users</span>
+                            </a>
+
+                            <!--Collapsible Body of users-->
+                            <div class="collapsible-body">
+                                <ul>
+
+                                    <li class="user-details" id="user-1">
+                                        <div class="row">
+
+                                            <div class="col col s4 m4 l4">
+                                                <img src="/assets/images/avatar/avatar-2.png" alt=""
+                                                     class="circle responsive-img valign profile-image gradient-45deg-cyan-light-green">
+                                            </div>
+
+                                            <div class="col col s8 m8 l8">
+                                                <a class="white-text profile-btn">Lil Pump</a>
+                                                <p class="user-roal">Phone : 801-554-8917</p>
+                                                <p class="user-roal">Car : Honda Civic</p>
+                                                <p class="user-roal"># of Seats : 4</p>
+                                            </div>
+
+                                        </div>
+
+                                    </li>
+
+                                    <li class="user-details" id="user-2">
+                                        <div class="row">
+
+                                            <div class="col col s4 m4 l4">
+                                                <img src="/assets/images/avatar/avatar-9.png" alt=""
+                                                     class="circle responsive-img valign profile-image gradient-45deg-deep-orange-orange">
+                                            </div>
+
+                                            <div class="col col s8 m8 l8">
+                                                <a class="white-text profile-btn">Chester Trix</a>
+                                                <p class="user-roal">Phone : 801-854-0200</p>
+                                                <p class="user-roal">Car : Range Rover</p>
+                                                <p class="user-roal"># of Seats : 4</p>
+                                            </div>
+
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+
+                <!--Documentation for Materialized Library-->
+                <li>
+                    <a href="../../../Documentation/materialize-admin-4.0/documentation" target="_blank">
+                        <i class="material-icons">import_contacts</i>
+                        <span class="nav-text">Documentation</span>
+                    </a>
+                </li>
+
+
+            </ul>
+
+            <a href="#" data-activates="slide-out"
+               class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only">
+                <i class="material-icons">menu</i>
+            </a>
+
+        </aside>
+        <!-- END LEFT SIDEBAR NAV-->
+
+        <!-- START CONTENT -->
+        <section id="content">
+
+            <!--start container-->
+            <div class="container">
+                <div id="profile-page" class="section">
+                    <!-- profile-page-header -->
+                    <div id="profile-page-header" class="card">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="/assets/images/gallary/23.png" alt="user background">
+                        </div>
+                        <figure class="card-profile-image">
+                            <img src="/assets/images/avatar/avatar-7.png" alt="profile image"
+                                 class="circle z-depth-2 responsive-img activator gradient-45deg-purple-pink gradient-shadow">
+                        </figure>
+
+                        <div class="card-content">
+                            <div class="row pt-2">
+                                <div class="col s12 m3 offset-m2">
+                                    <h4 class="card-title grey-text text-darken-4">John Doe</h4>
+                                    <p class="medium-small grey-text">Profile Name</p>
+                                </div>
+                                <div class="col s12 m2 center-align">
+                                    <h4 class="card-title grey-text text-darken-4">Subaru Impreza</h4>
+                                    <p class="medium-small grey-text">Car</p>
+                                </div>
+                                <div class="col s12 m2 center-align">
+                                    <h4 class="card-title grey-text text-darken-4">4</h4>
+                                    <p class="medium-small grey-text"># of Seats</p>
+                                </div>
+                                <div class="col s12 m2 center-align">
+                                    <h4 class="card-title grey-text text-darken-4">801-492-3421</h4>
+                                    <p class="medium-small grey-text">Phone</p>
+                                </div>
+                                <div class="col s12 m1 right-align">
+                                    <a class="btn-floating activator waves-effect waves-light rec accent-2 right">
+                                        <i class="material-icons">perm_identity</i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-reveal">
+
+                             <span class="card-title grey-text text-darken-4">
+                                 <i class="material-icons right">close</i>
+                             </span>
+
+
+                            <h4 class="header2">User Profile</h4>
+
+                            <div class="row">
+                                <form class="col s12">
+
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <i class="material-icons prefix">account_circle</i>
+                                            <input id="name" type="text" class="validate">
+                                            <label for="name">Name</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <i class="material-icons prefix">settings_phone</i>
+                                            <input id="phone" type="number" class="validate">
+                                            <label for="phone">Phone</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <i class="material-icons prefix">email</i>
+                                            <input id="email" type="email" class="validate">
+                                            <label for="email">Email</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <i class="material-icons prefix">directions_car</i>
+                                            <input id="car" type="text" class="validate">
+                                            <label for="car">Car</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <i class="material-icons prefix">event_seat</i>
+                                            <input id="seats" type="number" class="validate">
+                                            <label for="seats"># of Seats</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <i class="material-icons prefix">location_on</i>
+                                            <input id="address" type="text" class="validate">
+                                            <label for="address">Address</label>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <button class="btn cyan waves-effect waves-light right" type="submit"
+                                                    name="action">Submit
+                                                <i class="material-icons right">send</i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </form>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--/ profile-page-header -->
+                    <!-- profile-page-content -->
+                </div>
+            </div>
+
+
+        </section>
+        <!-- END CONTENT -->
+
+    </div>
+    <!-- END WRAPPER -->
+</div>
+<!-- END MAIN -->
+
+<!-- START FOOTER -->
+<footer class="page-footer deep-purple darken-4">
+    <div class="footer-copyright">
+        <div class="container">
+          <span>Copyright ©
+            <script type="text/javascript">
+
+                //Grabs the current year and keeps the copyright updated
+                document.write(new Date().getFullYear());
+            </script> <a class="grey-text text-lighten-2"
+                         href=""
+                         target="_blank">Divvy</a> All rights reserved.</span>
+            <span class="right hide-on-small-only"> Design and Developed by <a class="grey-text text-lighten-2"
+                                                                               href="">Divvy</a></span>
+        </div>
+    </div>
+</footer>
+<!-- END FOOTER -->
+
+
+<!-- ================================================
+Scripts
+================================================ -->
+
+<!-- jQuery Library -->
+<script type="text/javascript" src="/assets/vendors/jquery-3.2.1.min.js"></script>
+<!--materialize js-->
+<script type="text/javascript" src="/assets/js/materialize.min.js"></script>
+<!--prism-->
+<script type="text/javascript" src="/assets/vendors/prism/prism.js"></script>
+<!--scrollbar-->
+<script type="text/javascript" src="/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+<!-- masonry -->
+<script src="/assets/vendors/masonry.pkgd.min.js"></script>
+<!-- imagesloaded -->
+<script src="/assets/vendors/imagesloaded.pkgd.min.js"></script>
+<!-- magnific-popup -->
+<script type="text/javascript" src="/assets/vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
+<!--plugins.js - Some Specific JS codes for Plugin Settings-->
+<script type="text/javascript" src="/assets/js/plugins.js"></script>
+<!--media-hover-effects.js - Page Specific JS codes -->
+<script type="text/javascript" src="/assets/js/scripts/media-hover-effects.js"></script>
+<!--custom-script.js - Add your own theme custom JS-->
+<script type="text/javascript" src="/assets/js/custom-script.js"></script>

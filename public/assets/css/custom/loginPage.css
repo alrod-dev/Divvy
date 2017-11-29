@@ -1,0 +1,100 @@
+body
+{
+    background: linear-gradient(0deg, #7b1fa2 0%, #7c4dff 100%) ;
+}
+
+/*Register Link*/
+#register
+{
+    color: #7b1fa2;
+}
+
+#register:hover
+{
+    color: #7c4dff;
+}
+
+/*Register Button*/
+#registerBtn
+{
+    background-color: #7b1fa2;
+    margin-left: 25%;
+}
+
+#registerBtn:hover
+{
+    background-color: #7c4dff;
+}
+
+
+.modal.modal-fixed-footer
+{
+    height: 20%;
+    text-align: center;
+}
+
+
+/*Register Form*/
+.register-page
+{
+    margin-left: -150px;
+    width: 200%;
+}
+
+.register-form
+{
+    width: 100%;
+}
+
+
+/*Form Icons Colors*/
+.input-field .prefix.active
+{
+    color: #7c4dff !important;
+}
+
+/*Username Input*/
+input[type=text]:not(.browser-default):focus:not([readonly])
+{
+    border-bottom: 1px solid #7c4dff !important;
+    box-shadow: 0 1px 0 0 #7c4dff !important;
+}
+
+input[type=text]:not(.browser-default):focus:not([readonly]) + label
+{
+    color: #7c4dff !important;
+}
+
+/*Password Input*/
+input[type=password]:not(.browser-default):focus:not([readonly])
+{
+    border-bottom: 1px solid #7c4dff !important;
+    box-shadow: 0 1px 0 0 #7c4dff !important;
+}
+
+input[type=password]:not(.browser-default):focus:not([readonly]) + label
+{
+    color: #7c4dff !important;
+}
+
+
+/*Checkbox*/
+[type="checkbox"]:checked + label:before
+{
+    border-right: 2px solid #7c4dff !important;
+    border-bottom: 2px solid #7c4dff !important;
+}
+
+
+/**/
+#loginButton
+{
+    background-color: #7b1fa2;
+}
+
+#loginButton:hover
+{
+    background-color: #7c4dff;
+}
+
+

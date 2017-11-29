@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!--CSS Templates-->
+    {{#each css}}
+        <link rel="stylesheet" href="{{this}}" type="text/css">
+    {{/each}}
+
+    <link rel="icon" href="{{icon}}">
+
+    <title>{{title}}</title>
+
+</head>
+
+<body cz-shortcut-listen="true" class="{{bodyName}}">
+
+
+<!--Renders body of Index or Articles Saved-->
+{{{ body }}}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
+
+</body>
+</html>

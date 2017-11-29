@@ -1,0 +1,103 @@
+/*Logo*/
+header .brand-logo {
+    padding: 15px 20px;
+}
+
+header .brand-logo img {
+    height: 30px;
+}
+
+/*Mobile Button*/
+.btn-floating
+{
+    background-color: #7b1fa2;
+}
+
+/*Mobile Button Hover*/
+.btn-floating:hover
+{
+    background-color: #6a1b9a;
+}
+
+/*Mobile Button Focused on*/
+.btn-floating:focus
+{
+    background-color: #6a1b9a;
+}
+
+/*Side Nav Items Arranged*/
+ul.side-nav.leftside-navigation li:not(.no-padding).user-details
+{
+    margin-bottom: 0;
+}
+
+/*Profile Images*/
+.profile-image
+{
+    margin-top: 50%;
+    margin-bottom: 45%;
+}
+
+/*Rounded Box*/
+.circle
+{
+    border-radius: 10%;
+}
+
+ul.side-nav.leftside-navigation li:not(.no-padding) a {
+
+    padding-right: 0px;
+    padding-left: 0px;
+
+}
+
+.user-details
+{
+    padding-bottom: 15px !important;
+}
+
+/*Different Pic for user*/
+#user-1
+{
+    background: url(../../images/gallary/1.png) no-repeat center center;
+}
+
+#user-2
+{
+    background: url(../../images/gallary/10.png) no-repeat center center;
+}
+
+/*User Info Alligned Properly*/
+.user-roal
+{
+    margin-bottom: -5px;
+    margin-top: -20px;
+}
+
+.logo-text
+{
+    letter-spacing: 0.4em;
+    padding-left: 20px !important;
+
+}
+
+.card
+{
+    overflow: auto;
+}
+
+.footer-copyright
+{
+    margin-top: 2px;
+}
+
+
+/*Google Maps*/
+#map {
+    position: static !important;
+}
+
+/*.gm-style*/
+/*{*/
+    /*position: static !important;*/
+/*}*/
