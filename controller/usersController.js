@@ -1,27 +1,27 @@
 
 
 // require packages needed for scraping data
-var cheerio = require('cheerio');
+let cheerio = require('cheerio');
 
 module.exports = function(request)  {
     // Make a request for the news section of mlb.com
     request("https://www.nytimes.com/section/sports", function (error, response, html) {
-        var genre = 'business';
+        let genre = 'business';
         // Load the html body from request into cheerio
-        var $ = cheerio.load(html);
+        let $ = cheerio.load(html);
 
         // initiate an empty entry object
-        var data = [];
+        let data = [];
         // For each article element with a "buckets-bottom" class
         $("div.stream article").each(function (i, element) {
 
 
 
             // add the title , url, content and image to the object
-            var headline = $(element).children('div.story-body').children('a').children('div.story-meta').children('h2').text().trim();
-            var content = $(element).children('div.story-body').children('a').children('div.story-meta').children('p').text().trim();
-            var link =  $(element).children('div.story-body').children('a').attr("href");
-            var image = $(element).children('div.story-body').children('a').children('div.wide-thumb').children('img').attr('src');
+            let headline = $(element).children('div.story-body').children('a').children('div.story-meta').children('h2').text().trim();
+            let content = $(element).children('div.story-body').children('a').children('div.story-meta').children('p').text().trim();
+            let link =  $(element).children('div.story-body').children('a').attr("href");
+            let image = $(element).children('div.story-body').children('a').children('div.wide-thumb').children('img').attr('src');
 
             data.push({
 
