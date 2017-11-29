@@ -54,6 +54,6 @@
 <h3>Check it out!</h3>
 
 <ul>
-    <li><strong>https://alrod909.github.io/Divvy-Mongoose/</strong></li>
+    <li><strong>https://alrod909.github.io/Divvy/</strong></li>
     <li><strong>https://divvy-.herokuapp.com/</strong></li>
 </ul>
