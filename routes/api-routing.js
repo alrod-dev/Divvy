@@ -2,7 +2,9 @@
 // File: JS - api-routing.js
 // Date: 12/2/2017
 
-
+/*
+/ Global Variables
+ */
 let express = require("express");
 let router = express.Router();
 
@@ -16,7 +18,7 @@ let User = require('../models/Users');
 / Users API
  */
 
-// Route for getting all Articles from the db
+// Route for getting all users from the db
 router.get("/allUsers", function (req, res) {
     // Grab every document in the Articles collection
     User
@@ -47,6 +49,33 @@ router.delete("/:id", function (req, res) {
 
 });
 
+router.put("/update", function (req, res) {
+        const userUpdated = {
+            fullname: req.body.name,
+            address: req.body.address,
+            phone: req.body.phone,
+            vehicle: req.body.vehicle,
+            seats: req.body.seats,
+            email: req.body.email
+        };
+
+        console.log(userUpdated);
+
+    User.update({_id: req.params.id}, userUpdated, function(err, raw) {
+        if (err) {
+            res.send(err);
+        }
+        res.send(raw);
+
+        res.redirect('/users-profile');
+
+    });
+
+
+});
+    
+
+
 // Route for register new user to the db
 router.post("/register", function (req, res) {
 
@@ -70,7 +99,7 @@ router.post("/register", function (req, res) {
 
     console.log(userInfo);
 
-
+    //Check if all fields have been validated
     req.checkBody("name", "Name is required").notEmpty();
     req.checkBody("address", "Address is required").notEmpty();
     req.checkBody("phone", "Phone is required").notEmpty();
@@ -81,6 +110,7 @@ router.post("/register", function (req, res) {
     req.checkBody("username", "Username is required").notEmpty();
     req.checkBody("password", "Name is required").notEmpty();
 
+    //
     let errors = req.validationErrors();
 
     if (errors) {
@@ -129,6 +159,7 @@ router.post("/register", function (req, res) {
 
 });
 
+//Authenticator for log-in
 passport.use(new LocalStrategy(
     function (username, password, done) {
 
@@ -159,6 +190,9 @@ passport.use(new LocalStrategy(
     }
 ));
 
+/*
+/ Serializes and De-Serializes user info
+ */
 passport.serializeUser(function (user, done) {
     done(null, user.id);
 });
@@ -169,6 +203,9 @@ passport.deserializeUser(function (id, done) {
     });
 });
 
+/*
+/ Logs in user
+ */
 router.post('/login', passport.authenticate('local',
     {successRedirect: '/users-page', failureRedirect: '/login-page', failureFlash: true}),
     function (req, res) {
@@ -179,12 +216,17 @@ router.post('/login', passport.authenticate('local',
         res.redirect('/users-page');
 });
 
+/*
+/ Logs out user
+ */
+
 router.get('/logout', function (req, res) {
 
     req.logOut();
 
     req.flash("success_msg", "Log Out Successful!");
 
+    res.redirect("/login-page");
 });
 
 

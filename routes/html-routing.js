@@ -18,6 +18,7 @@ let router = express.Router();
                 '/assets/css/custom/landingPage.css', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css',
                 'https://fonts.googleapis.com/css?family=Architects+Daughter|Roboto&subset=latin,devanagari'],
             icon: "http://res.cloudinary.com/alrod909/image/upload/v1511830743/divvy/divvyIcon.png",
+            //Sets welcome class to body
             bodyName: 'welcome'
         });
     });
@@ -49,7 +50,7 @@ let router = express.Router();
     });
 
     //Locked User Page
-    router.get('/users-lock', function (req, res) {
+    router.get('/users-lock', ensureAuthenticated, function (req, res) {
 
         res.render('userLock', {
             title: 'User Lock | Divvy',
@@ -62,7 +63,7 @@ let router = express.Router();
     });
 
     //Main User Page
-    router.get('/users-page', function (req, res) {
+    router.get('/users-page', ensureAuthenticated, function (req, res) {
         res.render('userPage', {
             title: 'User Page | Divvy',
             css: ['/assets/css/themes/fixed-menu/materialize.css',
@@ -75,7 +76,7 @@ let router = express.Router();
     });
 
     //User Profile Page
-    router.get('/users-profile', function (req, res) {
+    router.get('/users-profile', ensureAuthenticated, function (req, res) {
         res.render('profile', {
             title: 'User Profile | Divvy',
             css: ['/assets/css/themes/fixed-menu/materialize.css',
@@ -86,6 +87,21 @@ let router = express.Router();
             icon: "http://res.cloudinary.com/alrod909/image/upload/v1511830743/divvy/divvyIcon.png"
         });
     });
+
+    function ensureAuthenticated(req, res, next) {
+
+        if(req.isAuthenticated())
+        {
+            return next();
+        }
+
+        else
+        {
+            req.flash('error_msg', "You're not logged in");
+            res.redirect("/login-page")
+        }
+        
+    }
 
 module.exports = router;
 

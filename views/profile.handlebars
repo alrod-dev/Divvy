@@ -1,3 +1,7 @@
+<!--Author: Alfredo Rodriguez & Louie Lohebec-->
+<!--File: profile.handlebars - HBS-->
+<!--Date: 12/2/2017-->
+
 <!-- Start Page Loading -->
 <div id="loader-wrapper">
     <div id="loader"></div>
@@ -69,7 +73,7 @@
                     </li>
 
                     <li>
-                        <a href="/login-page" class="grey-text text-darken-1">
+                        <a href="/users/logout" class="grey-text text-darken-1">
                             <i class="material-icons">keyboard_tab</i> Logout</a>
                     </li>
 
@@ -106,10 +110,10 @@
 
                         <!--Profile Info-->
                         <div class="col col s8 m8 l8">
-                            <a class="white-text profile-btn">John Doe</a>
-                            <p class="user-roal">Phone : 801-492-3421</p>
-                            <p class="user-roal">Car : Subaru Impreza</p>
-                            <p class="user-roal"># of Seats : 4</p>
+                            <a class="white-text profile-btn">{{user.fullname}}</a>
+                            <p class="user-roal">Phone : {{user.phone}}</p>
+                            <p class="user-roal">Car : {{user.vehicle}}</p>
+                            <p class="user-roal"># of Seats : {{user.seats}}</p>
                         </div>
 
                     </div>
@@ -208,31 +212,35 @@
                                  class="circle z-depth-2 responsive-img activator gradient-45deg-purple-pink gradient-shadow">
                         </figure>
 
-                        <div class="card-content">
-                            <div class="row pt-2">
-                                <div class="col s12 m3 offset-m2">
-                                    <h4 class="card-title grey-text text-darken-4">John Doe</h4>
-                                    <p class="medium-small grey-text">Profile Name</p>
-                                </div>
-                                <div class="col s12 m2 center-align">
-                                    <h4 class="card-title grey-text text-darken-4">Subaru Impreza</h4>
-                                    <p class="medium-small grey-text">Car</p>
-                                </div>
-                                <div class="col s12 m2 center-align">
-                                    <h4 class="card-title grey-text text-darken-4">4</h4>
-                                    <p class="medium-small grey-text"># of Seats</p>
-                                </div>
-                                <div class="col s12 m2 center-align">
-                                    <h4 class="card-title grey-text text-darken-4">801-492-3421</h4>
-                                    <p class="medium-small grey-text">Phone</p>
-                                </div>
-                                <div class="col s12 m1 right-align">
-                                    <a class="btn-floating activator waves-effect waves-light rec accent-2 right">
-                                        <i class="material-icons">perm_identity</i>
-                                    </a>
+                        {{#if user}}
+
+                            <div class="card-content">
+                                <div class="row pt-2">
+                                    <div class="col s12 m3 offset-m2">
+                                        <h4 class="card-title grey-text text-darken-4">{{user.fullname}}</h4>
+                                        <p class="medium-small grey-text">Profile Name</p>
+                                    </div>
+                                    <div class="col s12 m2 center-align">
+                                        <h4 class="card-title grey-text text-darken-4">{{user.vehicle}}</h4>
+                                        <p class="medium-small grey-text">Car</p>
+                                    </div>
+                                    <div class="col s12 m2 center-align">
+                                        <h4 class="card-title grey-text text-darken-4">{{user.seats}}</h4>
+                                        <p class="medium-small grey-text"># of Seats</p>
+                                    </div>
+                                    <div class="col s12 m2 center-align">
+                                        <h4 class="card-title grey-text text-darken-4">{{user.phone}}</h4>
+                                        <p class="medium-small grey-text">Phone</p>
+                                    </div>
+                                    <div class="col s12 m1 right-align">
+                                        <a class="btn-floating activator waves-effect waves-light rec accent-2 right">
+                                            <i class="material-icons">perm_identity</i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+
+                        {{/if}}
 
                         <div class="card-reveal">
 
@@ -244,67 +252,72 @@
                             <h4 class="header2">User Profile</h4>
 
                             <div class="row">
-                                <form class="col s12">
 
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <i class="material-icons prefix">account_circle</i>
-                                            <input id="name" type="text" class="validate">
-                                            <label for="name">Name</label>
+                                {{#if user}}
+
+                                    <form class="col s12" method="post" action="/users/update">
+
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix">account_circle</i>
+                                                <input id="name" name="name" type="text" class="validate" value="{{user.fullname}}">
+                                                <label for="name">Name</label>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <i class="material-icons prefix">settings_phone</i>
-                                            <input id="phone" type="number" class="validate">
-                                            <label for="phone">Phone</label>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix">settings_phone</i>
+                                                <input id="phone" name="phone" type="text" class="validate" value="{{user.phone}}">
+                                                <label for="phone">Phone</label>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <i class="material-icons prefix">email</i>
-                                            <input id="email" type="email" class="validate">
-                                            <label for="email">Email</label>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix">email</i>
+                                                <input id="email" name="email" type="email" class="validate" value="{{user.email}}">
+                                                <label for="email">Email</label>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <i class="material-icons prefix">directions_car</i>
-                                            <input id="car" type="text" class="validate">
-                                            <label for="car">Car</label>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix">directions_car</i>
+                                                <input id="vehicle" name="vehicle" type="text" class="validate" value="{{user.vehicle}}">
+                                                <label for="vehicle">Car</label>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <i class="material-icons prefix">event_seat</i>
-                                            <input id="seats" type="number" class="validate">
-                                            <label for="seats"># of Seats</label>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix">event_seat</i>
+                                                <input id="seats" name="seats" type="number" class="validate" value="{{user.seats}}">
+                                                <label for="seats"># of Seats</label>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <i class="material-icons prefix">location_on</i>
-                                            <input id="address" type="text" class="validate">
-                                            <label for="address">Address</label>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix">location_on</i>
+                                                <input id="address" name="address" type="text" class="validate" value="{{user.address}}">
+                                                <label for="address">Address</label>
+                                            </div>
                                         </div>
-                                    </div>
 
 
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <button class="btn cyan waves-effect waves-light right" type="submit"
-                                                    name="action">Submit
-                                                <i class="material-icons right">send</i>
-                                            </button>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <button class="btn cyan waves-effect waves-light right" type="submit"
+                                                        name="action">Save
+                                                    <i class="material-icons right">send</i>
+                                                </button>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                </form>
+                                    </form>
+
+                                {{/if}}
 
                             </div>
 

@@ -4,7 +4,7 @@ const bcrypt = require("bcryptjs");
 // Create Schema class
 const Schema = mongoose.Schema;
 
-// Create article schema
+// Create user info schema
 const UsersSchema = new Schema({
     // title is a required string
     fullname: {
@@ -51,8 +51,10 @@ let Users = mongoose.model("users", UsersSchema);
 // Export the model
 module.exports = Users;
 
+//Controller for creating userInfo
 module.exports.createUser = function (newUser, callback) {
 
+    //Encrypts the users password
     bcrypt.genSalt(10, function(err, salt) {
         bcrypt.hash(newUser.password, salt, function(err, hash) {
             // Store hash in your password DB.
@@ -63,6 +65,7 @@ module.exports.createUser = function (newUser, callback) {
 
 };
 
+//Looks for user by username
 module.exports.getUserByUsername = function (username, callback) {
 
     let query = {username: username};
@@ -70,15 +73,18 @@ module.exports.getUserByUsername = function (username, callback) {
 
 };
 
+//Looks for user by Id
 module.exports.getUserById = function (id, callback) {
 
     Users.findById(id, callback);
 
 };
 
+//Compare password if it's right or not
 module.exports.comparePassword = function (candidatePassword, hash, callback) {
 
     // Load hash from your password DB.
+    //Decrypts the users password from the DB
     bcrypt.compare(candidatePassword, hash, function(err, isMatch) {
         if(err) throw err;
 
