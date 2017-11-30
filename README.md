@@ -55,5 +55,5 @@
 
 <ul>
     <li><strong>https://alrod909.github.io/Divvy/</strong></li>
-    <li><strong>https://divvy-.herokuapp.com/</strong></li>
+    <li><strong>https://divvy-car-app.herokuapp.com/</strong></li>
 </ul>
