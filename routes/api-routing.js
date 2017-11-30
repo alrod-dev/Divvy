@@ -151,13 +151,19 @@ router.post("/register", function (req, res) {
     //Check if all fields have been validated
     req.checkBody("name", "Name is required").notEmpty();
     req.checkBody("address", "Address is required").notEmpty();
-    req.checkBody("phone", "Phone is required").notEmpty();
+    req.checkBody("phone", "Phone number is required").notEmpty();
+    req.checkBody("phone", "Phone number is not valid").matches(/^\+?(\d.*){3,}$/, "i");
     req.checkBody("vehicle", "Vehicle is required").notEmpty();
     req.checkBody("seats", "Seats is required").notEmpty();
     req.checkBody("email", "Email is required").notEmpty();
     req.checkBody("email", "Email is not valid").isEmail();
     req.checkBody("username", "Username is required").notEmpty();
-    req.checkBody("password", "Name is required").notEmpty();
+    req.checkBody("username", "Username can only have letters or numbers").matches(/^[a-zA-Z0-9]*$/, "i");
+    req.checkBody("username", "Username can only be 4 to 16 letters").len(4, 16);
+    req.checkBody("password", "Password is required").notEmpty();
+    req.checkBody("password", "Password must include at least one upper case letter, " +
+        "one lower case letter, and one numeric digit.").matches(/^[a-zA-Z]\w{3,14}$/, "i");
+    req.checkBody("password", "Password must be 6-18 characters long").len(6, 18);
 
     //
     let errors = req.validationErrors();
