@@ -33,8 +33,10 @@
                 <div class="header-search-wrapper hide-on-med-and-down">
                 <i class="material-icons">search</i>
                 <input type="text" name="Search" id="searchBar" class="header-search-input z-depth-2"
-                placeholder="Explore Materialize"/>
+                placeholder="Search Address"/>
                 </div>
+
+
 
                 <!--Right Top Nav Bar-->
                 <ul class="right hide-on-med-and-down">
@@ -46,6 +48,7 @@
                     <!--<span class="flag-icon flag-icon-gb"></span>-->
                     <!--</a>-->
                     <!--</li>-->
+
 
                     <!--Fullscreen Button-->
                     <li>
@@ -154,15 +157,6 @@
                             <i class="material-icons">face</i> Profile</a>
                     </li>
 
-                    <!--<li>-->
-                    <!--<a href="#" class="grey-text text-darken-1">-->
-                    <!--<i class="material-icons">settings</i> Settings</a>-->
-                    <!--</li>-->
-
-                    <!--<li>-->
-                    <!--<a href="#" class="grey-text text-darken-1">-->
-                    <!--<i class="material-icons">live_help</i> Help</a>-->
-                    <!--</li>-->
 
                     <li class="divider"></li>
 
@@ -175,6 +169,30 @@
                         <a href="/users/logout" class="grey-text text-darken-1">
                             <i class="material-icons">keyboard_tab</i> Logout</a>
                     </li>
+
+                </ul>
+
+                <!--Right Top Nav Bar-->
+                <ul class="right hide-on-med-and-down">
+
+                    <!--Search Button-->
+                    <li>
+
+                        <a class="btn-floating waves-effect waves-light purple lightrn-1">
+                            <i class="material-icons">search</i>
+                        </a>
+
+                    </li>
+
+                    <!--Navigate Button-->
+                    <li>
+
+                        <a class="btn-floating waves-effect waves-light purple lightrn-1">
+                            <i class="material-icons">gps_fixed</i>
+                        </a>
+
+                    </li>
+
 
                 </ul>
 
@@ -215,6 +233,7 @@
                                 <p class="user-roal">Phone : {{user.phone}}</p>
                                 <p class="user-roal">Car : {{user.vehicle}}</p>
                                 <p class="user-roal"># of Seats : {{user.seats}}</p>
+                                <input type="hidden" id="address" value="{{user.address}}">
                             </div>
 
                         {{/if}}
