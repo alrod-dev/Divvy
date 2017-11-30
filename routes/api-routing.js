@@ -49,7 +49,7 @@ router.delete("/:id", function (req, res) {
 
 });
 
-router.put("/update", function (req, res) {
+router.post("/update", function (req, res) {
         const userUpdated = {
             fullname: req.body.name,
             address: req.body.address,
@@ -61,15 +61,24 @@ router.put("/update", function (req, res) {
 
         console.log(userUpdated);
 
-    User.update({_id: req.params.id}, userUpdated, function(err, raw) {
+        callback = (err,raw) =>{
+
+        return res.redirect("/users-profile");
+    };
+
+    User.findOneAndUpdate({email: req.body.email}, userUpdated, {new: true},
+
+    function(err, raw) {
         if (err) {
             res.send(err);
         }
-        res.send(raw);
 
-        res.redirect('/users-profile');
+        console.log(raw);
 
-    });
+        return res.redirect('/users-profile');
+
+    }
+    );
 
 
 });
