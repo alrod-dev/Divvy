@@ -30,11 +30,11 @@
                 </ul>
 
                 <!--Search Bar-->
-                <!--<div class="header-search-wrapper hide-on-med-and-down">-->
-                <!--<i class="material-icons">search</i>-->
-                <!--<input type="text" name="Search" class="header-search-input z-depth-2"-->
-                <!--placeholder="Explore Materialize"/>-->
-                <!--</div>-->
+                <div class="header-search-wrapper hide-on-med-and-down">
+                <i class="material-icons">search</i>
+                <input type="text" name="Search" id="searchBar" class="header-search-input z-depth-2"
+                placeholder="Explore Materialize"/>
+                </div>
 
                 <!--Right Top Nav Bar-->
                 <ul class="right hide-on-med-and-down">
@@ -301,7 +301,7 @@
 
         <!-- START CONTENT -->
         <section id="content">
-            
+
             <!--Selection of map mode-->
             <div class="col s2 m2 l2 map-control" id="style-selector-control">
                 <a class="btn dropdown-settings waves-effect waves-light breadcrumbs-btn gradient-45deg-purple-deep-purple right" id="colorChanger" href="#!"
@@ -387,5 +387,15 @@ Scripts
 <script type="text/javascript" src="/assets/js/googleMaps.js"></script>
 
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATGCU4dvDLSYXd6_GI9pixRJze4sdgCcs&callback=initMap"
-        async defer></script>
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATGCU4dvDLSYXd6_GI9pixRJze4sdgCcs&callback=initMap"-->
+        <!--async defer></script>-->
+
+<script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATGCU4dvDLSYXd6_GI9pixRJze4sdgCcs&libraries=places&callback=initMap"></script>
+
+
+<script type="text/javascript">
+
+
+
+</script>

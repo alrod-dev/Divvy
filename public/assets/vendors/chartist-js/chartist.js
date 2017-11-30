@@ -2697,7 +2697,7 @@ var Chartist = {
    *   height: '200px'
    * };
    *
-   * // In the global name space Chartist we call the Line function to initialize a line chart. As a first parameter we pass in a selector where we would like to get our chart created. Second parameter is the actual data object and as a third parameter we pass in our options
+   * // In the global name space Chartist we call the Line function to mapsAutocomplete a line chart. As a first parameter we pass in a selector where we would like to get our chart created. Second parameter is the actual data object and as a third parameter we pass in our options
    * new Chartist.Line('.ct-chart', data, options);
    *
    * @example
@@ -3075,7 +3075,7 @@ var Chartist = {
    *   ]
    * };
    *
-   * // In the global name space Chartist we call the Bar function to initialize a bar chart. As a first parameter we pass in a selector where we would like to get our chart created and as a second parameter we pass our data object.
+   * // In the global name space Chartist we call the Bar function to mapsAutocomplete a bar chart. As a first parameter we pass in a selector where we would like to get our chart created and as a second parameter we pass our data object.
    * new Chartist.Bar('.ct-chart', data);
    *
    * @example
@@ -3228,7 +3228,7 @@ var Chartist = {
     }).length === 1;
 
     // Draw the series
-    // initialize series groups
+    // mapsAutocomplete series groups
     for (var i = 0; i < this.data.series.length; i++) {
       seriesGroups[i] = this.svg.elem('g', null, null, true);
 

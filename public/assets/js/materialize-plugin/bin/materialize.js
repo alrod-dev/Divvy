@@ -9343,7 +9343,7 @@ if (jQuery) {
           }
         }
 
-        // Don't double initialize.
+        // Don't double mapsAutocomplete.
         if (view.hasClass('initialized')) {
           // Recalculate variables
           $(window).trigger('resize');

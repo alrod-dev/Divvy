@@ -9,7 +9,7 @@ let userId, newUser;
 //use all these specific buttons
 // $(document).on("click", "#registerBtn", registerUser);
 
-//initialize all modals
+//mapsAutocomplete all modals
 $('.modal').modal();
 //or by click on trigger
 $('.modal-trigger').modal();

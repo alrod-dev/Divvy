@@ -49,40 +49,80 @@ router.delete("/:id", function (req, res) {
 
 });
 
+//Update the users info
 router.post("/update", function (req, res) {
-        const userUpdated = {
-            fullname: req.body.name,
-            address: req.body.address,
-            phone: req.body.phone,
-            vehicle: req.body.vehicle,
-            seats: req.body.seats,
-            email: req.body.email
-        };
-
-        console.log(userUpdated);
-
-        callback = (err,raw) =>{
-
-        return res.redirect("/users-profile");
+    const userUpdated = {
+        fullname: req.body.name,
+        address: req.body.address,
+        phone: req.body.phone,
+        vehicle: req.body.vehicle,
+        seats: req.body.seats,
+        email: req.body.email
     };
+
+    console.log(userUpdated);
+
 
     User.findOneAndUpdate({email: req.body.email}, userUpdated, {new: true},
 
-    function(err, raw) {
-        if (err) {
-            res.send(err);
+        function (err, raw) {
+            if (err) {
+                res.send(err);
+            }
+
+            console.log(raw);
+
+            return res.redirect('/users-profile');
+
         }
-
-        console.log(raw);
-
-        return res.redirect('/users-profile');
-
-    }
     );
 
 
 });
-    
+
+//Router
+router.post("/re-logged", function (req, res) {
+
+    let password = req.body.password;
+    let actualPassword;
+
+    console.log(password);
+
+    console.log(req.body.id);
+
+    User.getUserById(req.body.id,
+
+        function (err, isMatch) {
+            if (err) {
+                res.send(err);
+            }
+
+            console.log(isMatch.password);
+
+            actualPassword = isMatch.password;
+
+
+            User.comparePassword(password, actualPassword, function (err, isMatch) {
+
+                if(err) throw err;
+
+                if(!isMatch)
+                {
+                    req.flash("error_msg", "Invalid Password");
+                }
+
+                res.redirect('/users-page');
+
+
+            });
+
+        }
+    );
+
+
+
+
+});
 
 
 // Route for register new user to the db
@@ -221,9 +261,8 @@ router.post('/login', passport.authenticate('local',
         // If this function gets called, authentication was successful.
         // `req.user` contains the authenticated user.
 
-        // req.user.username
         res.redirect('/users-page');
-});
+    });
 
 /*
 / Logs out user
@@ -237,8 +276,6 @@ router.get('/logout', function (req, res) {
 
     res.redirect("/login-page");
 });
-
-
 
 
 module.exports = router;

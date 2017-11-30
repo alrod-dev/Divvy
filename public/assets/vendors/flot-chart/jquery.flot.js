@@ -701,7 +701,7 @@ Licensed under the MIT license.
         // public attributes
         plot.hooks = hooks;
 
-        // initialize
+        // mapsAutocomplete
         initPlugins(plot);
         parseOptions(options_);
         setupCanvases();
