@@ -96,5 +96,3 @@ input[type=password]:not(.browser-default):focus:not([readonly]) + label
 {
     background-color: #7c4dff;
 }
-
-

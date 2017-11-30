@@ -1,3 +1,7 @@
+// Author: Alfredo Rodriguez & Louie Lohebec
+// File: JS - Users.js
+// Date: 12/2/2017
+
 // require mongoose and the database connection
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");

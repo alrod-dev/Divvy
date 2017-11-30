@@ -1,3 +1,8 @@
+// Author: Alfredo Rodriguez & Louie Lohebec
+// File: JS - connection.js
+// Date: 12/2/2017
+
+
 // require mongoose
 let mongoose = require('mongoose');
 

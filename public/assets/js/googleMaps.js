@@ -1,3 +1,7 @@
+// Author: Alfredo Rodriguez & Louie Lohebec
+// File: JS - googleMaps.js
+// Date: 12/2/2017
+
 let map, currentLocation;
 
 function initMap() {
