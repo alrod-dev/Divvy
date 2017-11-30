@@ -2,12 +2,25 @@
 // File: JS - googleMaps.js
 // Date: 12/2/2017
 
-let map, currentLocation;
+let map, currentUserLocation,
+otherUsersLocation;
+
+//Waits until the page is ready and allows to use search bar for
+//Google Autocomplete
+$(document).ready(function(){
+    mapsAutocomplete();
+});
 
 function initMap() {
     // Create the map with no initial style specified.
     // It therefore has default styling.
     let SaltLakeCity = {lat: 40.76, lng: -111.89};
+
+    let geocoder = new google.maps.Geocoder();
+
+    currentUserLocation =  $("#address").val();
+
+    console.log(currentUserLocation);
 
     let options = {zoom: 13, center: SaltLakeCity,  mapTypeControl: false};
 
@@ -29,24 +42,73 @@ function initMap() {
 
 }
 
-$(document).ready(function(){
-    mapsAutocomplete();
-});
 
 function mapsAutocomplete() {
 
     let autocomplete = new google.maps.places.Autocomplete(document.getElementById("searchBar"));
+
+    console.log(autocomplete);
 
     google.maps.event.addListener(autocomplete, "place_changed", function () {
 
 
         let place = autocomplete.getPlace();
 
+        console.log(place);
+
         console.log(place.formatted_address);
         console.log(place.geometry.location.lat());
         console.log(place.geometry.location.lng());
 
+        let newLocation = {coords:{lat: place.geometry.location.lat(), lng: place.geometry.location.lng()}};
+
+        addMarker(newLocation);
+
     })
+
+}
+
+function geocodeAddress(geocoder, resultsMap) {
+    let address = document.getElementById('address').value;
+    geocoder.geocode({'address': address}, function(results, status) {
+        if (status === 'OK') {
+            resultsMap.setCenter(results[0].geometry.location);
+            let marker = new google.maps.Marker({
+                map: resultsMap,
+                position: results[0].geometry.location
+            });
+        } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+        }
+    });
+}
+
+// Add Marker Function
+function addMarker(props) {
+    let marker = new google.maps.Marker({
+        position: props.coords,
+        map: map,
+        //icon:props.iconImage
+    });
+
+    map.setCenter(props.coords);
+
+    // Check for customicon
+    if (props.iconImage) {
+        // Set icon image
+        marker.setIcon(props.iconImage);
+    }
+
+    // Check content
+    if (props.content) {
+        var infoWindow = new google.maps.InfoWindow({
+            content: props.content
+        });
+
+        marker.addListener('click', function () {
+            infoWindow.open(map, marker);
+        });
+    }
 
 }
 
