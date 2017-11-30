@@ -334,16 +334,28 @@
             <!--</div>-->
 
             <!--Selection of map mode-->
-            <div id="style-selector-control"  class="map-control">
-                <select id="style-selector" class="selector-control">
-                    <option value="default">Default</option>
-                    <option value="silver">Silver</option>
-                    <option value="night" selected="selected">Night mode</option>
-                    <option value="retro" >Retro</option>
-                    <option value="hiding">Hide features</option>
-                </select>
-            </div>
+            <div class="col s2 m2 l2 map-control" id="style-selector-control">
+                <a class="btn dropdown-settings waves-effect waves-light breadcrumbs-btn gradient-45deg-purple-deep-purple right" id="colorChanger" href="#!"
+                   data-activates="dropdown1">
+                    <i class="material-icons hide-on-med-and-up">settings</i>
+                    <span class="hide-on-small-onl">Map Colors</span>
+                    <i class="material-icons right">arrow_drop_down</i>
+                </a>
+                <ul id="dropdown1" class="dropdown-content"
+                    style="white-space: nowrap; opacity: 1; left: 865.234px; position: absolute; top: 130px; display: none;">
+                    <li><a onclick="" class="grey-text text-darken-2">Default</a>
+                    </li>
+                    <li><a class="grey-text text-darken-2">Silver</a>
+                    </li>
+                    <li><a class="grey-text text-darken-2">Night Mode</a>
+                    </li>
+                    <li><a class="grey-text text-darken-2">Retro</a>
+                    </li>
+                    <li><a class="grey-text text-darken-2">Hide Features</a>
+                    </li>
+                </ul>
 
+            </div>
 
 
             <!--Renders in a Google Map-->

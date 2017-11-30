@@ -94,10 +94,8 @@ ul.side-nav.leftside-navigation li:not(.no-padding) a {
 
 /*Google Maps*/
 .map-control {
-    background-color: #fff;
-    border: 1px solid #ccc;
     box-shadow: 0 2px 2px rgba(33, 33, 33, 0.4);
-    font-family: 'Roboto','sans-serif';
+    font-family: "Roboto", sans-serif !important;
     margin: 10px;
     /* Hide the control initially, to prevent it from appearing
        before the map loads. */
@@ -106,6 +104,11 @@ ul.side-nav.leftside-navigation li:not(.no-padding) a {
 /* Display the control once it is inside the map. */
 #map .map-control { display: block; }
 
+#map {
+    height: 800px;
+    width: 100%;
+}
+
 .selector-control {
     font-size: 14px;
     line-height: 30px;
@@ -113,10 +116,15 @@ ul.side-nav.leftside-navigation li:not(.no-padding) a {
     padding-right: 5px;
 }
 
-#map {
-    height: 800px;
-    width: 100%;
+#colorChanger
+{
+    padding-left: 10px;
+    padding-right: 10px;
 }
+
+
+
+
 
 /*.gm-style*/
 /*{*/

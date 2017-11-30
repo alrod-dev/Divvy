@@ -8,27 +8,45 @@ function initMap() {
     const map = new google.maps.Map(document.getElementById('map'), options);
 
     // Add a style-selector control to the map.
-    // let styleControl = document.getElementById('style-selector-control');
-    // map.controls[google.maps.ControlPosition.TOP_LEFT].push(styleControl);
+    let styleControl = document.getElementById('style-selector-control');
+    map.controls[google.maps.ControlPosition.TOP_LEFT].push(styleControl);
 
     console.log(styleControl);
 
     // Set the map's style to the initial value of the selector.
-    let styleSelector = document.getElementById('style-selector');
+    let styleSelector = document.getElementById('dropdown1');
+
     map.setOptions({styles: styles[styleSelector.value]});
 
     console.log(styleSelector);
     console.log(styleSelector.value);
 
-    let newSelector = document.getElementById("select-options-df1c033f-6d2a-013e-50c7-db15c36399d1");
-
     // Apply new JSON when the user selects a different style.
-    newSelector.addEventListener('change', function() {
-        console.log(newSelector);
+    styleSelector.addEventListener('change', function() {
+
+        console.log(styleControl.value);
+
         map.setOptions({styles: styles[styleSelector.value]});
-    }, false);
+    });
 }
 
+function silver() {
+    
+    
+    
+}
+
+function retro() {
+    
+}
+
+function defaultColor() {
+    
+}
+
+function defaultColor() {
+
+}
 
 const styles = {
     default: null,
