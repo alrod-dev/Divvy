@@ -3,7 +3,7 @@
 */
 $(function() {
 
-  /* initialize the external events
+  /* mapsAutocomplete the external events
   -----------------------------------------------------------------*/
   $('#external-events .fc-event').each(function() {
 
@@ -24,7 +24,7 @@ $(function() {
   });
 
 
-  /* initialize the calendar
+  /* mapsAutocomplete the calendar
   -----------------------------------------------------------------*/
   $('#calendar').fullCalendar({
     header: {

@@ -2036,7 +2036,7 @@ getDynaTreePersistData = DynaTreeStatus._getTreePersistData; // TODO: deprecated
 DynaTreeStatus.prototype = {
 	// Constructor
 	initialize: function(cookieId, cookieOpts) {
-//      this._log("DynaTreeStatus: initialize");
+//      this._log("DynaTreeStatus: mapsAutocomplete");
 		if( cookieId === undefined ){
 			cookieId = $.ui.dynatree.prototype.options.cookieId;
 		}
@@ -3138,7 +3138,7 @@ $.ui.dynatree.prototype.options = {
 	imagePath: null, // Path to a folder containing icons. Defaults to 'skin/' subdirectory.
 	children: null, // Init tree structure from this object array.
 	initId: null, // Init tree structure from a <ul> element with this ID.
-	initAjax: null, // Ajax options used to initialize the tree strucuture.
+	initAjax: null, // Ajax options used to mapsAutocomplete the tree strucuture.
 	autoFocus: true, // Set focus to first child, when expanding or lazy-loading.
 	keyboard: true, // Support keyboard navigation.
 	persist: false, // Persist expand-status to a cookie

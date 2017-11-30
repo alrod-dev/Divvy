@@ -1,4 +1,4 @@
-let map;
+let map, currentLocation;
 
 function initMap() {
     // Create the map with no initial style specified.
@@ -22,6 +22,27 @@ function initMap() {
 
     console.log(styleSelector);
     console.log(styleSelector.value);
+
+}
+
+$(document).ready(function(){
+    mapsAutocomplete();
+});
+
+function mapsAutocomplete() {
+
+    let autocomplete = new google.maps.places.Autocomplete(document.getElementById("searchBar"));
+
+    google.maps.event.addListener(autocomplete, "place_changed", function () {
+
+
+        let place = autocomplete.getPlace();
+
+        console.log(place.formatted_address);
+        console.log(place.geometry.location.lat());
+        console.log(place.geometry.location.lng());
+
+    })
 
 }
 
@@ -59,6 +80,7 @@ function hideFeature() {
 
 }
 
+//Styles of Google Maps
 const styles = {
     default: null,
     silver: [

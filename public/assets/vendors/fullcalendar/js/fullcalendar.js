@@ -44,7 +44,7 @@ $.fn.fullCalendar = function(options) {
 			}
 		}
 		// a new calendar initialization
-		else if (!calendar) { // don't initialize twice
+		else if (!calendar) { // don't mapsAutocomplete twice
 			calendar = new fc.CalendarBase(element, options);
 			element.data('fullCalendar', calendar);
 			calendar.render();
@@ -6608,7 +6608,7 @@ var View = fc.View = Class.extend({
 	},
 
 
-	// A good place for subclasses to initialize member variables
+	// A good place for subclasses to mapsAutocomplete member variables
 	initialize: function() {
 		// subclasses can implement
 	},
@@ -8422,7 +8422,7 @@ Calendar.rtlDefaults = { // right-to-left defaults
 
 ;;
 
-var langOptionHash = fc.langs = {}; // initialize and expose
+var langOptionHash = fc.langs = {}; // mapsAutocomplete and expose
 
 
 // TODO: document the structure and ordering of a FullCalendar lang file
