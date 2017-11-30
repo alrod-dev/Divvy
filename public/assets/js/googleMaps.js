@@ -1,3 +1,5 @@
+let map;
+
 function initMap() {
     // Create the map with no initial style specified.
     // It therefore has default styling.
@@ -5,7 +7,7 @@ function initMap() {
 
     let options = {zoom: 13, center: SaltLakeCity,  mapTypeControl: false};
 
-    const map = new google.maps.Map(document.getElementById('map'), options);
+    map = new google.maps.Map(document.getElementById('map'), options);
 
     // Add a style-selector control to the map.
     let styleControl = document.getElementById('style-selector-control');
@@ -21,30 +23,39 @@ function initMap() {
     console.log(styleSelector);
     console.log(styleSelector.value);
 
-    // Apply new JSON when the user selects a different style.
-    styleSelector.addEventListener('change', function() {
-
-        console.log(styleControl.value);
-
-        map.setOptions({styles: styles[styleSelector.value]});
-    });
 }
 
+//Changes color to silver
 function silver() {
-    
-    
-    
+
+    map.setOptions({styles: styles["silver"]});
+
 }
 
+//Changes color to retro
 function retro() {
+
+    map.setOptions({styles: styles["retro"]});
+}
+
+//Changes color to default
+function defaultColor() {
+
+    map.setOptions({styles: styles["default"]});
     
 }
 
-function defaultColor() {
-    
+//Changes color to night mode
+function nightMode() {
+
+    map.setOptions({styles: styles["night"]});
+
 }
 
-function defaultColor() {
+//Changes color to hiding
+function hideFeature() {
+
+    map.setOptions({styles: styles["hiding"]});
 
 }
 
