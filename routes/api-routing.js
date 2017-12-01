@@ -36,7 +36,7 @@ router.get("/allUsers", function (req, res) {
 // DELETE route for deleting notes. You can access the note's id in req.params.id
 router.delete("/:id", function (req, res) {
 
-    User.findByIdAndRemove({_id: req.params.id}, function (err, results) {
+    User.findByIdAndRemove({_id: req.params._id}, function (err, results) {
         // We'll create a simple object to send back with a message and the id of the document that was removed
         // You can really do this however you want, though.
         let response = {
@@ -62,15 +62,15 @@ router.post("/update", function (req, res) {
 
     console.log(userUpdated);
 
+    console.log(req.body._id);
 
-    User.findOneAndUpdate({email: req.body.email}, userUpdated, {new: true},
+
+    User.findOneAndUpdate({_id: req.body._id}, userUpdated,
 
         function (err, raw) {
             if (err) {
                 res.send(err);
             }
-
-            console.log(raw);
 
             return res.redirect('/users-profile');
 
