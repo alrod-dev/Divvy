@@ -24,8 +24,10 @@ function initMap() {
         geocoder.geocode({'address': address}, function (results, status) {
             if (status === 'OK') {
 
-                currentUserLocation = {lat: results[0].geometry.location.lat(),
-                    lng: results[0].geometry.location.lng()};
+                currentUserLocation = {
+                    lat: results[0].geometry.location.lat(),
+                    lng: results[0].geometry.location.lng()
+                };
 
                 options = {zoom: 13, center: currentUserLocation, mapTypeControl: false};
 
@@ -85,6 +87,21 @@ function mapsAutocomplete() {
 
 }
 
+function searchButton() {
+
+    let autocomplete = new google.maps.places.Autocomplete(document.getElementById("searchBar"));
+
+    let place = autocomplete.getPlace();
+
+    console.log(place.formatted_address);
+    console.log(place.geometry.location.lat());
+    console.log(place.geometry.location.lng());
+
+    let newLocation = {coords: {lat: place.geometry.location.lat(), lng: place.geometry.location.lng()}};
+
+    addMarker(newLocation);
+
+}
 
 
 // Add Marker Function
