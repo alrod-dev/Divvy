@@ -11,6 +11,7 @@ let geocoder;
 //Google Autocomplete
 $(document).ready(function () {
     mapsAutocomplete();
+
 });
 
 function initMap() {
@@ -18,18 +19,84 @@ function initMap() {
     // It therefore has default styling.
     let SaltLakeCity = {lat: 40.76, lng: -111.89};
 
+    //
     function geocodeAddress(geocoder) {
-        let address = $("#address").val();
+        let address = $("#userAddress").val();
+        let userInfo = {
+            name: $("#userName").text(), car: $("#userVehicle").text(),
+            seats: $("#userSeats").text(), address: $("#userAddress").val()
+        };
 
+
+        //Sets the layout for the window content info
+        //of the user
+        let userWindow = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">' + userInfo.name + '\'s Place</h1>'+
+            '<div id="bodyContent">'+
+            '<p><b>' + userInfo.car + '</b></p>'+
+            '<p><b>' + userInfo.seats + '</b></p>'+
+            '<p><b>Address: ' + userInfo.address + '</b></p>'+
+            '</div>'+
+            '</div>';
+
+
+        //Checks for address in users info
+        //and turns into coordinates
         geocoder.geocode({'address': address}, function (results, status) {
             if (status === 'OK') {
 
+                //Users exact location based off coordinates
                 currentUserLocation = {
                     lat: results[0].geometry.location.lat(),
                     lng: results[0].geometry.location.lng()
                 };
 
+                //Sets the options for how the map is going to look
+                //Zoom: sets how close of proximity the map is viewed
+                //Center: Where the map center on
+                //Map Type Control allows the user to have accessability to other not needed map features
                 options = {zoom: 13, center: currentUserLocation, mapTypeControl: false};
+
+                console.log(options);
+
+                //Initializes the map
+                map = new google.maps.Map(document.getElementById('map'), options);
+
+                // Add a style-selector control to the map.
+                let styleControl = document.getElementById('style-selector-control');
+                map.controls[google.maps.ControlPosition.TOP_LEFT].push(styleControl);
+
+
+                // Set the map's style to the initial value of the selector.
+                let styleSelector = document.getElementById('dropdown1');
+
+                //Adds a marker on the map with exact current location of user
+                let marker = new google.maps.Marker({
+                    position: currentUserLocation,
+                    map: map,
+                });
+
+                //Adds an info window the marker above
+                let infoWindow = new google.maps.InfoWindow({
+                    content: userWindow,
+                    maxWidth: 350
+                });
+
+                //When the marker is clicked the info window displays
+                marker.addListener('click', function () {
+                    infoWindow.open(map, marker);
+                });
+
+
+            }
+
+
+            else {
+                alert('Geocode was not successful for the following reason: ' + status);
+
+                options = {zoom: 13, center: SaltLakeCity, mapTypeControl: false};
 
                 console.log(options);
 
@@ -44,29 +111,26 @@ function initMap() {
                 let styleSelector = document.getElementById('dropdown1');
 
                 let marker = new google.maps.Marker({
-                    position: currentUserLocation,
+                    position: SaltLakeCity,
                     map: map,
                 });
 
-            }
 
-
-            else {
-                alert('Geocode was not successful for the following reason: ' + status);
             }
 
 
         });
     }
 
+    //Initializes the geocoder
     geocoder = new google.maps.Geocoder();
 
+    //Starts Map
     geocodeAddress(geocoder);
-
-
 }
 
 
+//Google Maps Address Autocomplete
 function mapsAutocomplete() {
 
     let autocomplete = new google.maps.places.Autocomplete(document.getElementById("searchBar"));
@@ -87,6 +151,7 @@ function mapsAutocomplete() {
 
 }
 
+//Search button for autocomplete
 function searchButton() {
 
     let autocomplete = new google.maps.places.Autocomplete(document.getElementById("searchBar"));
