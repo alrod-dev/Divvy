@@ -122,6 +122,19 @@ ul.side-nav.leftside-navigation li:not(.no-padding) a {
     padding-right: 10px;
 }
 
+#dropdown1
+{
+    white-space: nowrap; opacity: 1;
+    left: 865.234px;
+    position: absolute;
+    top: 130px;
+    display: none;
+}
+
+#searchButtons
+{
+    margin-right: 85px;
+}
 
 
 
