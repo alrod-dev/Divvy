@@ -51,6 +51,7 @@ ul.side-nav.leftside-navigation li:not(.no-padding) a {
 
 }
 
+/*Users Box information*/
 .user-details
 {
     padding-bottom: 15px !important;
@@ -59,12 +60,12 @@ ul.side-nav.leftside-navigation li:not(.no-padding) a {
 /*Different Pic for user*/
 #user-1
 {
-    background: url(../../images/gallary/1.png) no-repeat center center;
+    background: url(http://res.cloudinary.com/alrod909/image/upload/v1511736764/divvy/23_ubktwb.png) no-repeat center center;
 }
 
 #user-2
 {
-    background: url(../../images/gallary/10.png) no-repeat center center;
+    background: url(http://res.cloudinary.com/alrod909/image/upload/v1511736765/divvy/26_u2axpx.png) no-repeat center center;
 }
 
 /*User Info Alligned Properly*/
@@ -81,11 +82,13 @@ ul.side-nav.leftside-navigation li:not(.no-padding) a {
 
 }
 
+/*Users Card info*/
 .card
 {
     overflow: auto;
 }
 
+/*Fixing Footer*/
 .footer-copyright
 {
     margin-top: 2px;
@@ -131,15 +134,18 @@ ul.side-nav.leftside-navigation li:not(.no-padding) a {
     display: none;
 }
 
+/*Search and Start ride maps*/
 #searchButtons
 {
     margin-right: 85px;
 }
 
+/*Users Info Window*/
+#firstHeading {
+    font-size: 2.5em;
+}
 
-
-
-/*.gm-style*/
-/*{*/
-    /*position: static !important;*/
-/*}*/
+#content
+{
+    text-align: center;
+}
