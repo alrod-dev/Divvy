@@ -77,7 +77,7 @@ Our user interface was heavily influenced by the Google Maps interface, because 
 We designed the folder structure of this app folling MVC Paradigm in order to have a clean, organized, and easy to follow file structure. 
 </p>
 
-<img src="https://cloudinary.com/console/media_library#/dialog/image/upload/MVC_bahc1u">
+<img src="http://res.cloudinary.com/alrod909/image/upload/v1512193162/MVC_bahc1u.png" style="height: 200px;">
 <h6>A screenshot of our folder structure</h6>
 
 <h4>Coding Standards</h4>
