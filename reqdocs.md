@@ -40,7 +40,7 @@ During Development, we also specifically made an effort to have the Divvy WebApp
 </br>
 
 <img src="http://res.cloudinary.com/dguip1wni/image/upload/v1511833712/SQLdb_ygf7r9.png">
-<h6>A screenshot of the schema and seed files</h6>
+<h6>A screenshot of the schema</h6>
 
 <h4>Both GET and POST Routes</h4>
 
