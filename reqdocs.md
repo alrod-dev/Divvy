@@ -56,7 +56,25 @@ During Development, we also specifically made an effort to have the Divvy WebApp
 
 <p>Some of the libraries and techonlogies we used included:</p>
 
+<h4>Front-End:</h4>
 
+<ul>
+    <li><strong>HTML</strong></li>
+    <li><strong>Materialize CSS Framework</strong></li>
+    <li><strong>Handlebars-Express Framework</strong></li>
+</ul>
+
+<h4>Back-End:</h4>
+<ul>
+    <li><strong>Google Maps API</strong></li>
+    <li><strong>Javascript</strong></li>
+    <li><strong>Node JS</strong></li>
+    <li><strong>Cloudinary API</strong></li>
+    <li><strong>MongoDB</strong></li>
+    <li><strong>Materialize JS</strong></li>
+    <li><strong>React-Materialize JS</strong></li>
+    <li><strong>Node Modules Installed: Express, Passport, Bcrypt, Flash, etc</strong></li>
+</ul>
 
 <h4>Authentication</h4>
 
