@@ -3,7 +3,8 @@
 // Date: 12/2/2017
 
 let map, currentUserLocation,
-    otherUsersLocation, options;
+    otherUsersLocation, options,
+    desiredLocation, timeOfTrip;
 
 let geocoder;
 
@@ -12,6 +13,9 @@ let geocoder;
 $(document).ready(function () {
     mapsAutocomplete();
 
+
+
+
 });
 
 function initMap() {
@@ -19,7 +23,9 @@ function initMap() {
     // It therefore has default styling.
     let SaltLakeCity = {lat: 40.76, lng: -111.89};
 
-    //
+    //Gets the users exact address where they
+    //and marks it on the map using a marker
+    //and adding info window about them
     function geocodeAddress(geocoder) {
         let address = $("#userAddress").val();
         let userInfo = {
@@ -94,7 +100,7 @@ function initMap() {
 
 
             else {
-                alert('Geocode was not successful for the following reason: ' + status);
+                console.log('Geocode was not successful for the following reason: ' + status);
 
                 options = {zoom: 13, center: SaltLakeCity, mapTypeControl: false};
 
@@ -138,15 +144,16 @@ function mapsAutocomplete() {
     google.maps.event.addListener(autocomplete, "place_changed", function () {
 
 
+        //Gets the info of Exact spot that has been added
         let place = autocomplete.getPlace();
 
         console.log(place.formatted_address);
         console.log(place.geometry.location.lat());
         console.log(place.geometry.location.lng());
 
-        let newLocation = {coords: {lat: place.geometry.location.lat(), lng: place.geometry.location.lng()}};
+        desiredLocation = {coords: {lat: place.geometry.location.lat(), lng: place.geometry.location.lng()}};
 
-        addMarker(newLocation);
+        addMarker(desiredLocation);
     })
 
 }
@@ -197,6 +204,42 @@ function addMarker(props) {
     }
 
 }
+
+function makeTrip() {
+
+
+    let directionsDisplay = new google.maps.DirectionsRenderer({
+        map: map
+    });
+
+    console.log(desiredLocation);
+    console.log(currentUserLocation);
+
+    // Set destination, origin and travel mode.
+    let request = {
+        destination: desiredLocation.coords,
+        origin: currentUserLocation,
+        travelMode: 'DRIVING'
+    };
+
+    // Pass the directions request to the directions service.
+    let directionsService = new google.maps.DirectionsService();
+    directionsService.route(request, function(response, status) {
+        if (status == 'OK') {
+            // Display the route on the map.
+            directionsDisplay.setDirections(response);
+
+            console.log(response.routes[0].legs[0].duration.text);
+
+
+
+        }
+    });
+
+}
+
+
+
 
 //Changes color to silver
 function silver() {
