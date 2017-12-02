@@ -32,10 +32,10 @@ During Development, we also specifically made an effort to have the Divvy WebApp
 </p>
 
 <h2>Detailed Requirement Fulfilment</h2>
-<h4>React JS</h4>
+<h4>React-Materialize JS</h4>
 <h4>Node/Express Server</h4>
-<h4>MySQL Database</h4>
-<p>For this project, we used MySQL because of the simple and easily visualized table structure of this database language. Our database comprised of one table containing all of the user info necessary for the app. Our columns included each user's name, email address, phone number, physical address, vehicle of choice, the number of non-driver seats in this vehicle, username, and password. The database was seeded with dummy data for the purpose of demonstration.</p>
+<h4>MongoDB Database</h4>
+<p>For this project, we used MongoDB because of the simple and easily visualized table structure of this database language. Our database comprised of one table containing all of the user info necessary for the app. Our columns included each user's name, email address, phone number, physical address, vehicle of choice, the number of non-driver seats in this vehicle, username, and password. The database was seeded with dummy data for the purpose of demonstration.</p>
 </br>
 
 <img src="http://res.cloudinary.com/dguip1wni/image/upload/v1511833712/SQLdb_ygf7r9.png">
@@ -47,7 +47,7 @@ During Development, we also specifically made an effort to have the Divvy WebApp
 
 <h4>Heroku</h4>
 
-<p>The app is currently posted on heroku. <a href="https://divvy_.herokuapp.com">Check it out here</a></p>
+<p>The app is currently posted on heroku. <a href="https://divvy-car-app.herokuapp.com/">Check it out here</a></p>
 
 <h4>Outside Technologies</h4>
 
