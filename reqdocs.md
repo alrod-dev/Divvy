@@ -32,6 +32,7 @@ During Development, we also specifically made an effort to have the Divvy WebApp
 </p>
 
 <h2>Detailed Requirement Fulfilment</h2>
+<h4>Handlebars JS</h4>
 <h4>React-Materialize JS</h4>
 <h4>Node/Express Server</h4>
 <h4>MongoDB Database</h4>
