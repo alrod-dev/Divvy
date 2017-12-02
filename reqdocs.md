@@ -54,7 +54,9 @@ During Development, we also specifically made an effort to have the Divvy WebApp
 
 <h4>Outside Technologies</h4>
 
-<p>Some of the </p>
+<p>Some of the libraries and techonlogies we used included:</p>
+
+
 
 <h4>Authentication</h4>
 
