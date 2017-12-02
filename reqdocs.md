@@ -1,3 +1,5 @@
+<h1 align="center">Divvy</h1>
+
 <h1>Requirements Documentation</h1>
 
 
