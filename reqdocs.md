@@ -80,12 +80,11 @@ During Development, we also specifically made an effort to have the Divvy WebApp
 
 <p>
 When a user is registered, several things happen in succession. Firstly, the password is encrypted using bcrypt.js, and then all the information is stored in the db. The user is then redirected to the login page, and a banner is displayed announcing the user has been successfully registered. </br.
-
-
 </p>
+
 <h4>Polished UI/UX</h4>
 
-<p>
+<p>	
 Our user interface was heavily influenced by the Google Maps interface, because of the simplicity and ease of use it displays. Our color scheme was chosen for it's soothing cool colors.
 </p>
 
@@ -93,6 +92,7 @@ Our user interface was heavily influenced by the Google Maps interface, because 
 <h6>A screenshot of the main page of the app</h6>
 
 <h4>MVC Folder Structure</h4>
+
 <p>
 We designed the folder structure of this app folling MVC Paradigm in order to have a clean, organized, and easy to follow file structure. 
 </p>
