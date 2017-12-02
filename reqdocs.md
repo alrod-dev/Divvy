@@ -39,7 +39,7 @@ During Development, we also specifically made an effort to have the Divvy WebApp
 <p>For this project, we used MongoDB because of the simple and easily visualized table structure of this database language. Our database comprised of one table containing all of the user info necessary for the app. Our columns included each user's name, email address, phone number, physical address, vehicle of choice, the number of non-driver seats in this vehicle, username, and password. The database was seeded with dummy data for the purpose of demonstration.</p>
 </br>
 
-<img src="http://res.cloudinary.com/dguip1wni/image/upload/v1511833712/SQLdb_ygf7r9.png">
+<img src="http://res.cloudinary.com/alrod909/image/upload/v1512193162/schema_pcx5oa.png">
 <h6>A screenshot of the schema</h6>
 
 <h4>Both GET and POST Routes</h4>
@@ -67,7 +67,7 @@ When a user is registered, several things happen in succession. Firstly, the pas
 Our user interface was heavily influenced by the Google Maps interface, because of the simplicity and ease of use it displays. Our color scheme was chosen for it's soothing cool colors.
 </p>
 
-<img src="http://res.cloudinary.com/dguip1wni/image/upload/v1512010692/Screen_Shot_2017-11-29_at_19.57.42_psw3ce.png">
+<img src="http://res.cloudinary.com/alrod909/image/upload/v1512193165/userPage_lddm1q.png">
 <h6>A screenshot of the main page of the app</h6>
 
 <h4>MVC Folder Structure</h4>
@@ -75,12 +75,12 @@ Our user interface was heavily influenced by the Google Maps interface, because 
 We designed the folder structure of this app folling MVC Paradigm in order to have a clean, organized, and easy to follow file structure. 
 </p>
 
-<img src="http://res.cloudinary.com/dguip1wni/image/upload/v1511833711/MVCfolders_yeqoku.png">
+<img src="https://cloudinary.com/console/media_library#/dialog/image/upload/MVC_bahc1u">
 <h6>A screenshot of our folder structure</h6>
 
 <h4>Coding Standards</h4>
 <p>
 We made sure to maintain clean, properly indented and thoroughly commented code for ease of communication, and ease of understanding code we had written. We also included commented shells of potential future functionality.
 </p>
-<img src="http://res.cloudinary.com/dguip1wni/image/upload/v1511833715/Codingstandards_wkz19k.png">
+<img src="http://res.cloudinary.com/alrod909/image/upload/v1512193161/cleanCode_fvxwff.png">
 <h6>An example of the indentation and commenting we used throughout the project</h6>
