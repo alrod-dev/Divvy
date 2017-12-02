@@ -15,7 +15,15 @@
 <h2>Log In</h2>
 
 <p style="text-align: center">
-    <img src="http://res.cloudinary.com/alrod909/image/upload/v1511829079/divvy/login-page.png" width="100%">
+    <img src="http://res.cloudinary.com/alrod909/image/upload/v1512193160/loginPage_vkddew.png" width="100%">
+</p>
+
+<hr>
+
+<h2>Register Screen</h2>
+
+<p style="text-align: center">
+    <img src="http://res.cloudinary.com/alrod909/image/upload/v1512193161/registerPage_f3iqje.png" width="100%">
 </p>
 
 <hr>
@@ -23,7 +31,31 @@
 <h2>Users Page</h2>
 
 <p style="text-align: center">
-    <img src="http://res.cloudinary.com/alrod909/image/upload/v1511829082/divvy/users-page.png" width="100%">
+    <img src="http://res.cloudinary.com/alrod909/image/upload/v1512193165/userPage_lddm1q.png" width="100%">
+</p>
+
+<hr>
+
+<h2>Users Routing Directions</h2>
+
+<p style="text-align: center">
+    <img src="http://res.cloudinary.com/alrod909/image/upload/v1512193166/userPageWorking_otlyhn.png" width="100%">
+</p>
+
+<hr>
+
+<h2>Users Profile</h2>
+
+<p style="text-align: center">
+    <img src="http://res.cloudinary.com/alrod909/image/upload/v1512193164/profilePage_x10nzt.png" width="100%">
+</p>
+
+<hr>
+
+<h2>Users Lockscreen</h2>
+
+<p style="text-align: center">
+    <img src="http://res.cloudinary.com/alrod909/image/upload/v1512193160/lockscreenPage_exvzol.png" width="100%">
 </p>
 
 <hr>
@@ -44,10 +76,10 @@
     <li><strong>Javascript</strong></li>
     <li><strong>Node JS</strong></li>
     <li><strong>Cloudinary API</strong></li>
-    <li><strong>MySQL</strong></li>
+    <li><strong>MongoDB</strong></li>
     <li><strong>Materialize JS</strong></li>
     <li><strong>React-Materialize JS</strong></li>
-    <li><strong>Node Modules Installed: Express, Cheerio, axios, etc</strong></li>
+    <li><strong>Node Modules Installed: Express, Passport, Bcrypt, Flash, etc</strong></li>
 </ul>
 
 
